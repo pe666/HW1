@@ -1,8 +1,9 @@
 public class FirstDifficultTask {
-    public static String printBites (double b) {
+    public static String printBites (long b) {
         int counter = 0;
-        while (b >= 1024) {
-            b = b / 1024;
+        double bd = (double) b;
+        while (bd >= 1024) {
+            bd = bd / 1024;
             counter++;
         }
         String dataSize = "";
@@ -24,7 +25,11 @@ public class FirstDifficultTask {
                 break;
             case 5:
                 dataSize = " PB";
+                break;
+            case 6:
+                dataSize = " EB";
+                break;
         }
-        return (String.format("%.1f", b) + dataSize);
+        return (String.format("%.1f", bd) + dataSize);
     }
 }
